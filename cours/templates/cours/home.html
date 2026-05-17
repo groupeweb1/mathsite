@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Math Platform</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f4f6f9;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin:15px 0;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#2980b9;
+    border-right:5px solid #3498db;
+    padding-right:10px;
+}
+
+input{
+    padding:8px;
+    width:160px;
+}
+
+button{
+    padding:8px 12px;
+    background:#3498db;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.ok{ color:green; font-weight:bold; }
+.no{ color:red; font-weight:bold; }
+.fix{ color:#e67e22; font-weight:bold; }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📘 Math Platform - Correction</h1>
+
+<!-- 📊 ALGÈBRE -->
+<div class="card">
+<h2>📊 Algèbre</h2>
+
+<p>1) 2x + 3x = ?</p>
+<input id="a1">
+<button onclick="checkA1()">تصحيح</button>
+<p id="r1"></p>
+
+</div>
+
+<!-- 📐 GÉOMÉTRIE -->
+<div class="card">
+<h2>📐 Géométrie</h2>
+
+<p>1) 5 × 3 = ?</p>
+<input id="g1">
+<button onclick="checkG1()">تصحيح</button>
+<p id="r2"></p>
+
+</div>
+
+<!-- ➕ DÉVELOPPEMENT -->
+<div class="card">
+<h2>➕ نشر (Développement)</h2>
+
+<p>(x + 2)(x + 3) = ?</p>
+<input id="d1">
+<button onclick="checkD1()">تصحيح</button>
+<p id="r3"></p>
+
+</div>
+
+<!-- ✂️ FACTORISATION -->
+<div class="card">
+<h2>✂️ تفكيك (Factorisation)</h2>
+
+<p>x² + 5x = ?</p>
+<input id="f1">
+<button onclick="checkF1()">تصحيح</button>
+<p id="r4"></p>
+
+</div>
+
+</div>
+
+<script>
+
+/* ✔️ ALGÈBRE */
+function checkA1(){
+    let v = document.getElementById("a1").value;
+    let r = document.getElementById("r1");
+
+    if(v == "5x"){
+        r.innerHTML = "✔ صحيح";
+        r.className = "ok";
+    }else{
+        r.innerHTML = "✘ خطأ → الحل الصحيح: 5x (نجمع المعاملات 2x + 3x)";
+        r.className = "fix";
+    }
+}
+
+/* ✔️ GÉOMÉTRIE */
+function checkG1(){
+    let v = document.getElementById("g1").value;
+    let r = document.getElementById("r2");
+
+    if(v == 15){
+        r.innerHTML = "✔ صحيح";
+        r.className = "ok";
+    }else{
+        r.innerHTML = "✘ خطأ → الحل: 5 × 3 = 15";
+        r.className = "fix";
+    }
+}
+
+/* ✔️ DÉVELOPPEMENT */
+function checkD1(){
+    let v = document.getElementById("d1").value;
+    let r = document.getElementById("r3");
+
+    if(v == "x^2+5x+6"){
+        r.innerHTML = "✔ صحيح";
+        r.className = "ok";
+    }else{
+        r.innerHTML = "✘ خطأ → الحل: x² + 5x + 6";
+        r.className = "fix";
+    }
+}
+
+/* ✔️ FACTORISATION */
+function checkF1(){
+    let v = document.getElementById("f1").value;
+    let r = document.getElementById("r4");
+
+    if(v == "x(x+5)"){
+        r.innerHTML = "✔ صحيح";
+        r.className = "ok";
+    }else{
+        r.innerHTML = "✘ خطأ → الحل: نأخذ x مشترك → x(x+5)";
+        r.className = "fix";
+    }
+}
+
+</script>
+
+</body>
+</html>
